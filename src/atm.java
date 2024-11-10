@@ -177,7 +177,8 @@ class ATMSystem {
 
 public class atm {
     public static void main(String[] args) {
-        ATMSystem atmSystem = new ATMSystem();
+        ATMSystem atmSystem =    new ATMSystem();
         atmSystem.start(); //completed
+
     }
 }
