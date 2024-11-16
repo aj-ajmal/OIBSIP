@@ -2,9 +2,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessTheNumberGame {
-    private static final int MAX_ROUNDS = 5;
-    private static final int MAX_ATTEMPTS = 10;
-    private static final int RANGE = 100;
+    private static final int Max_Rounds = 3;
+    private static final int Max_Attempts = 5;
+    private static final int Range = 100;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -12,20 +12,20 @@ public class GuessTheNumberGame {
 
         System.out.println("Welcome to the Guess the Number Game!");
 
-        // Loop through rounds
-        for (int round = 1; round <= MAX_ROUNDS; round++) {
+
+        for (int round = 1; round <= Max_Rounds; round++) {
             System.out.println("\nRound " + round + " begins!");
 
-            // Generate a random number between 1 and RANGE
-            Random random = new Random();
-            int targetNumber = random.nextInt(RANGE) + 1;
 
-            int attemptsLeft = MAX_ATTEMPTS;
+            Random random = new Random();
+            int targetNumber = random.nextInt(Range) + 1;
+
+            int attemptsLeft = Max_Attempts;
             boolean hasGuessedCorrectly = false;
 
-            // Prompt user for guesses
+
             while (attemptsLeft > 0 && !hasGuessedCorrectly) {
-                System.out.println("Enter your guess (1 to " + RANGE + "): ");
+                System.out.println("Enter your guess (1 to " + Range + "): ");
                 int userGuess = scanner.nextInt();
                 attemptsLeft--;
 
@@ -41,8 +41,7 @@ public class GuessTheNumberGame {
                     System.out.println("Guess number is lower than yours ! Attempts left: " + attemptsLeft);
                 }
             }
-
-            // Check if user failed to guess the number
+            
             if (!hasGuessedCorrectly) {
                 System.out.println("Sorry! You've used all attempts. The number was: " + targetNumber);
             }
