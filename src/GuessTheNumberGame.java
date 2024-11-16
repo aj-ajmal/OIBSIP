@@ -2,9 +2,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessTheNumberGame {
-    private static final int MAX_ROUNDS = 5; // Maximum number of rounds
-    private static final int MAX_ATTEMPTS = 10; // Maximum attempts per round
-    private static final int RANGE = 100; // Range of random numbers (1 to 100)
+    private static final int MAX_ROUNDS = 5;
+    private static final int MAX_ATTEMPTS = 10;
+    private static final int RANGE = 100;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -30,15 +30,15 @@ public class GuessTheNumberGame {
                 attemptsLeft--;
 
                 if (userGuess == targetNumber) {
-                    int score = attemptsLeft * 10; // Score based on remaining attempts
+                    int score = attemptsLeft * 10;
                     totalScore += score;
                     System.out.println("Correct! You've guessed the number.");
                     System.out.println("Score for this round: " + score);
                     hasGuessedCorrectly = true;
                 } else if (userGuess < targetNumber) {
-                    System.out.println("The number is higher! Attempts left: " + attemptsLeft);
+                    System.out.println("Guess number is higher than yours ! Attempts left: " + attemptsLeft);
                 } else {
-                    System.out.println("The number is lower! Attempts left: " + attemptsLeft);
+                    System.out.println("Guess number is lower than yours ! Attempts left: " + attemptsLeft);
                 }
             }
 
