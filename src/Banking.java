@@ -27,10 +27,10 @@ class Account {
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            transactionHistory.add("Withdrew: Rs." + amount);
+            transactionHistory.add("Withdraw: Rs." + amount);
             System.out.println("Amount withdrawn successfully.");
         } else {
-            System.out.println("Invalid or insufficient funds for withdrawal.");
+            System.out.println("Invalid or insufficient balance for withdrawal.");
         }
     }
 
@@ -125,7 +125,7 @@ class ATM {
             user.getAccount().addTransaction("Transferred: Rs." + amount + " to user " + recipientId);
             System.out.println("Transferred Rs." + amount + " to user " + recipientId);
         } else {
-            System.out.println("Invalid or insufficient funds for transfer.");
+            System.out.println("Invalid or insufficient balance for transfer.");
         }
     }
 
@@ -176,12 +176,12 @@ class ATMSystem {
             ATM atm = new ATM(user);
             atm.showMenu();
         } else {
-            System.out.println("Invalid credentials. Access denied.");
+            System.out.println("Invalid User. Access denied.");
         }
     }
 }
 
-public class Main {
+public class Banking {
     public static void main(String[] args) {
         ATMSystem atmSystem = new ATMSystem();
         atmSystem.start();

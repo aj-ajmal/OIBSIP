@@ -9,20 +9,16 @@ public class GuessTheNumberGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int totalScore = 0;
-
         System.out.println("Welcome to the Guess the Number Game!");
-
 
         for (int round = 1; round <= Max_Rounds; round++) {
             System.out.println("\nRound " + round + " begins!");
-
 
             Random random = new Random();
             int targetNumber = random.nextInt(Range) + 1;
 
             int attemptsLeft = Max_Attempts;
             boolean hasGuessedCorrectly = false;
-
 
             while (attemptsLeft > 0 && !hasGuessedCorrectly) {
                 System.out.println("Enter your guess (1 to " + Range + "): ");
@@ -32,7 +28,7 @@ public class GuessTheNumberGame {
                 if (userGuess == targetNumber) {
                     int score = attemptsLeft * 10;
                     totalScore += score;
-                    System.out.println("Correct! You've guessed the number.");
+                    System.out.println("Correct! You guessed the number.");
                     System.out.println("Score for this round: " + score);
                     hasGuessedCorrectly = true;
                 } else if (userGuess < targetNumber) {
@@ -43,10 +39,10 @@ public class GuessTheNumberGame {
             }
             
             if (!hasGuessedCorrectly) {
-                System.out.println("Sorry! You've used all attempts. The number was: " + targetNumber);
+                System.out.println("Sorry! You used all attempts. The number was: " + targetNumber);
             }
         }
-        System.out.println("\nGame over! Your total score: " + totalScore);
+        System.out.println("\nGame over! Your total score is: " + totalScore);
         scanner.close();
     }
 }
