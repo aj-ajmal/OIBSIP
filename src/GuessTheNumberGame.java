@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class GuessTheNumberGame {
     private static final int Max_Rounds = 3;
-    private static final int Max_Attempts = 5;
+    private static final int Max_Attempts = 10;
     private static final int Range = 100;
 
     public static void main(String[] args) {
